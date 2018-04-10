@@ -1,0 +1,13 @@
+[INFO  - 2018-03-06T03:13:37.922Z] GhostDriver - Main - running on port 53459
+[INFO  - 2018-03-06T03:13:38.780Z] Session [5d7e9e70-20ec-11e8-8075-d7e65700b67e] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2018-03-06T03:13:38.780Z] Session [5d7e9e70-20ec-11e8-8075-d7e65700b67e] - page.customHeaders:  - {}
+[INFO  - 2018-03-06T03:13:38.780Z] Session [5d7e9e70-20ec-11e8-8075-d7e65700b67e] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2018-03-06T03:13:38.780Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 5d7e9e70-20ec-11e8-8075-d7e65700b67e
+[ERROR - 2018-03-06T03:13:40.759Z] Session [5d7e9e70-20ec-11e8-8075-d7e65700b67e] - page.onError - msg: TypeError: null is not an object (evaluating 'da_ua.match(/Version\/([0-9\.]+)/i)[1]')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2018-03-06T03:13:40.759Z] Session [5d7e9e70-20ec-11e8-8075-d7e65700b67e] - page.onError - stack:
+  searchBrowserVersion (http://tveta.naver.net/libs/assets/js/pc/main/min/pc.veta.core.min.js?20171027:1)
+  init (http://tveta.naver.net/libs/assets/js/pc/main/min/pc.veta.core.min.js?20171027:1)
+
+  phantomjs://platform/console++.js:263 in error

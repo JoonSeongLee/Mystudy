@@ -69,3 +69,6 @@ n_jobs : int, optional (default = 1)
 | predict_proba(X)                              | 테스트 데이터 X에 대한 확률 추정치.             |
 | score(X, y[, sample_weight])                  | 주어진 테스트 데이터 및 레이블의 평균 정확도를 반환합니다.  |
 | set_params(**params)                          | 이 estimator 매개 변수를 설정.                       |
+
+[link](http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)
+

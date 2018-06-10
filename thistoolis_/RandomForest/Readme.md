@@ -85,3 +85,4 @@ n_jobs : integer, optional (default=1)
 | score(X, y[, sample_weight])                  | 주어진 테스트 데이터 및 레이블의 평균 정확도를 반환합니다.               |
 | set_params(**params)                          | estimator의 매개 변수를 설정하십시오.                       |
 
+[link](http://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)

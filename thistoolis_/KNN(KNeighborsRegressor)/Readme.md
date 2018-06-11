@@ -1,74 +1,57 @@
 
 # KNeighborsClassifier()
 
-class sklearn.neighbors.`KNeighborsClassifier`(n_neighbors=5, weights=’uniform’, algorithm=’auto’, leaf_size=30, p=2, metric=’minkowski’, metric_params=None, n_jobs=1, **kwargs)
+
+class sklearn.cluster.`KMeans`(n_clusters=8, init=’k-means++’, n_init=10, max_iter=300, tol=0.0001, precompute_distances=’auto’, verbose=0, random_state=None, copy_x=True, n_jobs=1, algorithm=’auto’)
 
 ### Parameters:	
 
-n_neighbors : int, optional (default = 5)
+n_clusters : int, optional, default: 8
 
-    Number of neighbors to use by default for kneighbors queries.
-    (근접 이웃 수 설명)
+    형성 할 클러스터 수 및 생성 할 중심 수입니다.
 
-weights : str or callable, optional (default = ‘uniform’)
 
-    weight function used in prediction. Possible values:
-    (예측에 사용된 가중치 함수)
+max_iter : int, default: 300
+
+    단일 실행에 대한 k- 평균 알고리즘의 최대 반복 횟수
+
+tol : float, default: 1e-4
+
+    수렴에 대한 관성에 대한 상대 허용 오차
     
-    ‘uniform’  : uniform weights. All points in each neighborhood are weighted equally.
-                 (균일한 가중치, 각 이웃에있는 모든 점에 동일한 가중치가 적용)
-                 
-    ‘distance’ : weight points by the inverse of their distance. in this case, closer neighbors of a 
-                 query point will have a greater influence than neighbors which are further away.
-                 (거리의 역수로 가중치, 이 경우 포인트의 인접한 이웃들이 멀리 떨어져있는 이웃들보다 더 큰 영향을 미침)
-                 
-algorithm  : {‘auto’, ‘ball_tree’, ‘kd_tree’, ‘brute’}, optional
 
-    Algorithm used to compute the nearest neighbors:
-    (가장 가까운 이웃을 계산하는 데 사용되는 알고리즘)
-    
-    ‘ball_tree’ will use BallTree
-    ‘kd_tree’ will use KDTree
-    ‘brute’ will use a brute-force search.
-    ‘auto’ will attempt to decide the most appropriate algorithm based on the values passed to fit method.
-    Note: fitting on sparse input will override the setting of this parameter, using brute force.
+n_jobs : int
 
-leaf_size : int, optional (default = 30)
+    계산에 사용할 작업 수. 이는 각각의 n_init 실행을 병렬로 계산하여 작동합니다.
 
-    Leaf size passed to BallTree or KDTree. This can affect the speed of the construction and query, 
-    as well as the memory required to store the tree. The optimal value depends on the nature of the problem.
-    (BallTree 또는 KDTree에 전달 된 리프 크기)
-    
-p : integer, optional (default = 2)
+   
+algorithm : “auto”, “full” or “elkan”, default=”auto”
 
-    Power parameter for the Minkowski metric. When p = 1, this is equivalent to using manhattan_distance (l1),
-    and euclidean_distance (l2) for p = 2. For arbitrary p, minkowski_distance (l_p) is used.
+### Attributes
+.cluster_centers_ : array, [n_clusters, n_features]
 
-metric : string or callable, default ‘minkowski’
+    클러스터 센터의 좌표
 
-    the distance metric to use for the tree. The default metric is minkowski, and with p=2 is equivalent to 
-    the standard Euclidean metric. See the documentation of the DistanceMetric class for a list of available metrics.
+.labels_ : 
 
-metric_params : dict, optional (default = None)
+    각 점의 라벨
 
-    Additional keyword arguments for the metric function.
+.inertia_ : float
 
-n_jobs : int, optional (default = 1)
-
-    The number of parallel jobs to run for neighbors search. If -1, then the number of jobs is set to 
-    the number of CPU cores. Doesn’t affect fit method.
-    (인접 항목 검색을 위해 실행할 병렬 작업 수입니다. -1이면 작업 수는 CPU 코어 수로 설정됩니다)
+    가장 가까운 클러스터 센터에 대한 샘플의 제곱거리의 합.
 
 | Methods                                       |                                                               |
 |-----------------------------------------------|---------------------------------------------------------------|
-| fit(X, y)                                     | X를 학습 데이터로, y를 목표 값 |
+| fit(X[, y])                                   | k-means 클러스터링을 계산합니다. |
 | get_params([deep])                            | Get parameters for this estimator.                            |
-| kneighbors([X, n_neighbors, return_distance]) | 한 지점의 K- 이웃을 찾습니다.                            |
-| kneighbors_graph([X, n_neighbors, mode])      | X의 점에 대한 k- 이웃의 (가중치가있는) 그래프를 계산합니다.  |
+| fit_predict(X[, y]) | 클러스터 센터를 계산하고 각 샘플에 대한 클러스터 인덱스를 예측합니다.                   |
+| fit_transform(X[, y])	     | 클러스터링을 계산하고 X를 클러스터 거리 공간으로 변환합니다.  |
 | predict(X)                                    | 제공된 데이터의 클래스 레이블을 예측합니다.                |
-| predict_proba(X)                              | 테스트 데이터 X에 대한 확률 추정치.             |
-| score(X, y[, sample_weight])                  | 주어진 테스트 데이터 및 레이블의 평균 정확도를 반환합니다.  |
-| set_params(**params)                          | 이 estimator 매개 변수를 설정.                       |
+| predict_proba(X)                              | X가 속한 각 샘플에 가장 가까운 클러스터를 예측합니다.             |
+| score(X[, y])                  | Opposite of the value of X on the K-means objective. |
+| set_params(**params)                          | 이 estimator 매개 변수를 설정.|
+| transform(X)                          | 이 estimator 매개 변수를 설정.                       |
+
 
 [link](http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)
 

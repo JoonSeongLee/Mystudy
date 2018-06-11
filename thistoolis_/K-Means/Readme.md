@@ -1,5 +1,5 @@
 
-# KNeighborsClassifier()
+# KMeans()
 
 
 class sklearn.cluster.`KMeans`(n_clusters=8, init=’k-means++’, n_init=10, max_iter=300, tol=0.0001, precompute_distances=’auto’, verbose=0, random_state=None, copy_x=True, n_jobs=1, algorithm=’auto’)
@@ -52,5 +52,5 @@ algorithm : “auto”, “full” or “elkan”, default=”auto”
 | set_params(**params)                          | 이 estimator 매개 변수를 설정.|
 
 
-[link](http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)
+[link](http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html#sklearn.cluster.KMeans.transform)
 
